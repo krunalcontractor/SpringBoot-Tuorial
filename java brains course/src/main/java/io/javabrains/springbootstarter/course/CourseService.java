@@ -17,7 +17,8 @@ public class CourseService {
 	
 	public List <Course> getAllCourse(String id){
 		List<Course> courses = new ArrayList<>();
-		 courseRepository.findAll().forEach(courses :: add);
+		// courseRepository.findAll().forEach(courses :: add);
+		courseRepository.findByTopicId(id).forEach(courses :: add);
 		return courses;
 	}
 	
@@ -31,7 +32,7 @@ public class CourseService {
 		//topics.add(topic);
 	}
 	
-	public void updateCourse(Course topic, String id) {
+	public void updateCourse(Course topic) {
 		courseRepository.save(topic);
 //		for(int i=0; i < topics.size(); i++){
 //			Topic t = topics.get(i);
