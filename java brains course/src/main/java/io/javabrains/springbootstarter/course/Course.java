@@ -1,10 +1,10 @@
-package io.javabrains.springbootstarter.topic;
+package io.javabrains.springbootstarter.course;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Topic {
+public class Course {
 	@Id
 	private String id;
 	private String name;
@@ -27,13 +27,13 @@ public class Topic {
 	public void setDiscription(String discription) {
 		this.discription = discription;
 	}
-	public Topic(String id, String name, String discription) {
+	public Course(String id, String name, String discription) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.discription = discription;
 	}
-	public Topic() {
+	public Course() {
 		super();
 	}
 	
