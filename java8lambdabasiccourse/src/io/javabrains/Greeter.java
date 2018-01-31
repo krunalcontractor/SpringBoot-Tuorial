@@ -7,8 +7,32 @@ public class Greeter {
 	}
 	public static void main(String[] args) {
 		Greeter greeter = new Greeter();
-		HelloWorldGreeting helloWorldGreeting = new HelloWorldGreeting();
-		greeter.greet(helloWorldGreeting);
+		Greeting helloWorldGreeting = new HelloWorldGreeting();
+		Greeting lambdaGreeting = ()-> System.out.println("Hello World Lambada!");
+		
+		//lambdaGreeting.perform();
+		//helloWorldGreeting.perform();
+		//greeter.greet(helloWorldGreeting);
+		
+		
+		//MyAdd addFunction = (int a, int b)-> a +b;
+		
+		Greeting innerClassGreeting = new Greeting() {
+			@Override
+			public void perform() {
+					System.out.println("Hello World Inner class!");				
+			}
+		};
+		//innerClassGreeting.perform();
+		greeter.greet(innerClassGreeting);
+		greeter.greet(lambdaGreeting);
 	}
 
 }
+//
+//interface  MyLambda{
+//	void foo();
+//}
+//interface MyAdd{
+//	int add(int x, int y);
+//}
