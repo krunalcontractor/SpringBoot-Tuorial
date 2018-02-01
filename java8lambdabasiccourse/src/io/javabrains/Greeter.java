@@ -15,7 +15,6 @@ public class Greeter {
 		//greeter.greet(helloWorldGreeting);
 		
 		
-		//MyAdd addFunction = (int a, int b)-> a +b;
 		
 		Greeting innerClassGreeting = new Greeting() {
 			@Override
