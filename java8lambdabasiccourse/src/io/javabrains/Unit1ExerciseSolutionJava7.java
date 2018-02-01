@@ -40,13 +40,32 @@ public static void main(String[] args) {
 		
 		printLastNameBeginningWithC(people);
 		
-
+		printConditionally(people ,new ConditionObj() {
+			
+			@Override
+			public boolean test(Person p) {
+				return p.getFirstName().startsWith("A");
+			}
+		});
+		printConditionally(people ,new ConditionObj() {
+			
+			@Override
+			public boolean test(Person p) {
+				return p.getFirstName().startsWith("K");
+			}
+		});
 	}
 
 	private static void printLastNameBeginningWithC(List<Person> people) {
 		for (Person person : people) {
 			if(person.getFirstName().startsWith("A"))		System.out.println(person);
 		}	
+	}
+	
+	private static void printConditionally(List<Person> people, ConditionObj condition) {
+		for (Person person : people) {
+			if(condition.test(person))		System.out.println(person);
+		}
 	}
 
 	private static void printAll(List<Person> people) {
